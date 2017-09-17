@@ -84,7 +84,9 @@ namespace Interview_Exercise_Tests
             // Make sure exception was inspected.
             if (_actualException != null && !_actualExceptionInspected)
             {
-                throw new AssertionException($"The exception of type '{_actualException.GetType() .Name}' was not inspected by the test:\r\n {_actualException}.");
+                throw new AssertionException(string.Format(
+                    "The exception of type '{0}' was not inspected by the test:\r\n {1}.",
+                    _actualException.GetType().Name, _actualException));
             }
         }
 
@@ -147,7 +149,7 @@ namespace Interview_Exercise_Tests
 
             if (errorMessages.Any())
             {
-                var separator = $"{Environment.NewLine}{Environment.NewLine}";
+                var separator = string.Format("{0}{1}", Environment.NewLine, Environment.NewLine);
                 string errorMessageString = string.Join(separator, errorMessages);
 
                 Assert.Fail("The following conditions failed:{0}{1}", Environment.NewLine, errorMessageString);

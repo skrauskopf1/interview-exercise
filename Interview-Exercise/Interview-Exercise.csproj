@@ -42,6 +42,11 @@
   <ItemGroup>
     <Compile Include="Country.cs" />
     <Compile Include="CountryCodeRepository.cs" />
+    <Compile Include="FileIo.cs" />
+    <Compile Include="IValidate.cs" />
+    <Compile Include="IPersist.cs" />
+    <Compile Include="IFileIo.cs" />
+    <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
